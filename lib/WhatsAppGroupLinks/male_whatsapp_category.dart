@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class WhatsAppCategory extends ChangeNotifier {
+class MaleWhatsAppCategory extends ChangeNotifier {
   final String categoryName;
   final String categoryId;
 
-  WhatsAppCategory({
+  MaleWhatsAppCategory({
     this.categoryName,
     this.categoryId,
   });

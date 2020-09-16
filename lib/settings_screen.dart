@@ -28,7 +28,7 @@ class SettingsScreen extends StatelessWidget {
               ),
             ),
             trailing: Text(
-              "0.0.1",
+              "0.0.3",
               style: TextStyle(
                 color: Colors.white,
               ),
@@ -37,7 +37,37 @@ class SettingsScreen extends StatelessWidget {
           Divider(
             color: Colors.white,
             thickness: 0.6,
-          )
+          ),
+          ListTile(
+            onTap: () {
+              print(
+                "Contact Us Tapped",
+              );
+            },
+            leading: Icon(
+              Icons.group,
+              color: Colors.white,
+              size: 20,
+            ),
+            title: Text(
+              "Contact Us",
+              style: TextStyle(
+                color: Colors.white,
+              ),
+            ),
+            trailing: IconButton(
+              icon: Icon(
+                Icons.chevron_right,
+                color: Colors.white,
+                size: 27,
+              ),
+              onPressed: () {
+                print(
+                  "Button Pressed",
+                );
+              },
+            ),
+          ),
         ],
       ),
     );

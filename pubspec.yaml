@@ -27,6 +27,8 @@ dependencies:
   provider: ^4.3.1
   flutter_launcher_icons: ^0.7.5
 
+  share: ^0.6.4+3
+
 #  flutter pub run flutter_launcher_icons:main
 flutter_icons:
   image_path: "Assets/Icons/rectangular_app_icon.png"

@@ -2,13 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import 'settings_screen.dart';
-import './WhatsAppGroupLinks/whatsapp_category_screen.dart';
-import './WhatsAppGroupLinks/whatsapp_category_list.dart';
+import './WhatsAppGroupLinks/male_whatsapp_category_screen.dart';
+import './WhatsAppGroupLinks/male_whatsapp_category_list.dart';
+import './WhatsAppGroupLinks/whatsapp_tabs_screen.dart';
 
 class MenuScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final categories = Provider.of<WhatsAppCategoryList>(context).categories;
+    final categories = Provider.of<MaleWhatsAppCategoryList>(context).categories;
 
     return Scaffold(
       backgroundColor: Colors.grey[800],
@@ -30,7 +31,7 @@ class MenuScreen extends StatelessWidget {
                 height: 10,
               ),
               Text(
-                "Social Platforms Links",
+                "Social Media Links",
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 25,
@@ -41,38 +42,44 @@ class MenuScreen extends StatelessWidget {
               ),
               Column(
                 children: <Widget>[
-                  ListTile(
-                    onTap: () {
-                      Navigator.of(context).pushNamed(
-                        WhatsAppCategoryScreen.routeName,
-                      );
-                    },
-                    leading: CircleAvatar(
-                      radius: 25,
-                      backgroundColor: Colors.green,
-                      child: Icon(
-                        Icons.group,
-                        color: Colors.white,
+                  ListView.builder(
+                    scrollDirection: Axis.vertical,
+                    shrinkWrap: true,
+                    itemBuilder: (ctx, i) => ListTile(
+                      onTap: () {
+                        Navigator.of(context).pushNamed(
+                          MaleWhatsAppCategoryScreen.routeName,
+
+                        );
+                      },
+                      leading: CircleAvatar(
+                        radius: 25,
+                        backgroundColor: Colors.green,
+                        child: Icon(
+                          Icons.group,
+                          color: Colors.white,
+                        ),
                       ),
-                    ),
-                    title: Text(
-                      "WhatsApp Groups",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 18,
-                      ),
-                    ),
-                    trailing: CircleAvatar(
-                      backgroundColor: Colors.green,
-                      radius: 16,
-                      child: Text(
-                        "${categories.length}",
+                      title: Text(
+                        "WhatsApp Groups",
                         style: TextStyle(
                           color: Colors.white,
-                          fontSize: 16,
+                          fontSize: 18,
+                        ),
+                      ),
+                      trailing: CircleAvatar(
+                        backgroundColor: Colors.green,
+                        radius: 16,
+                        child: Text(
+                          "${categories.length}",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 16,
+                          ),
                         ),
                       ),
                     ),
+                    itemCount: 1,
                   ),
                   Divider(
                     color: Colors.white,
